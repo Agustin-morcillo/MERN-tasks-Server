@@ -25,3 +25,7 @@ app.use("/api/users", apiUsersRouter)
 app.use("/api/projects", apiProjectsRouter)
 app.use("/api/tasks", apiTasksRouter)
 
+app.use("/", function(req, res) {
+    return res.send("Back-end de la aplicación") 
+})
+
