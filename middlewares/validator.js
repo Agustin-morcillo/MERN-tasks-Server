@@ -6,7 +6,9 @@ const bcrypt = require("bcryptjs")
 
 const validator = {
   createUser: [
-    body("name").notEmpty().withMessage("Debes ingresar un nombre"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debes ingresar un nombre"),
     body("email")
       .notEmpty()
       .withMessage("Debes ingresar un email")
@@ -41,7 +43,9 @@ const validator = {
           return Promise.reject("Email o contraseña inválidos")
         }
       }),
-    body("password").notEmpty().withMessage("Debes ingresar un password"),
+    body("password")
+      .notEmpty()
+      .withMessage("Debes ingresar un password"),
   ],
   bodyProjectAccess: [
     body("projectId")
@@ -92,10 +96,14 @@ const validator = {
       }),
   ],
   createProject: [
-    body("name").notEmpty().withMessage("Debes ingresar un nombre de proyecto"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debes ingresar un nombre de proyecto"),
   ],
   editProject: [
-    body("name").notEmpty().withMessage("Debes ingresar un nombre de proyecto"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debes ingresar un nombre de proyecto"),
   ],
   taskExist: [
     param("id").custom(async function (value) {
@@ -110,10 +118,14 @@ const validator = {
     }),
   ],
   createTask: [
-    body("name").notEmpty().withMessage("Debes ingresar un nombre de tarea"),
+    body("name")
+      .notEmpty()
+      .withMessage("Debes ingresar un nombre de tarea"),
   ],
   editTask: [
-    body("state").isBoolean().withMessage("El estado debe ser un booleano"),
+    body("state")
+      .isBoolean()
+      .withMessage("El estado debe ser un booleano"),
   ],
 }
 

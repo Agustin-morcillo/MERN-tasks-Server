@@ -7,29 +7,10 @@ const auth = require("../middlewares/auth")
 
 router.get("/", auth, validator.queryProjectAccess, tasksController.taskList)
 
-router.post(
-  "/create",
-  auth,
-  validator.bodyProjectAccess,
-  validator.createTask,
-  tasksController.createTask
-)
+router.post("/create", auth, validator.bodyProjectAccess, validator.createTask, tasksController.createTask)
 
-router.put(
-  "/edit/:id",
-  auth,
-  validator.bodyProjectAccess,
-  validator.taskExist,
-  validator.editTask,
-  tasksController.editTask
-)
+router.put("/edit/:id", auth, validator.bodyProjectAccess, validator.taskExist, validator.editTask, tasksController.editTask)
 
-router.delete(
-  "/delete/:id",
-  auth,
-  validator.queryProjectAccess,
-  validator.taskExist,
-  tasksController.deleteTask
-)
+router.delete("/delete/:id", auth, validator.queryProjectAccess, validator.taskExist, tasksController.deleteTask)
 
 module.exports = router
