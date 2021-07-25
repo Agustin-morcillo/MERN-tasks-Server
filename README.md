@@ -20,7 +20,7 @@ Servidor conectado a una base de datos (MongoDB) alojada en la nube. Recibe los 
 ## B. English
 Server connected to a database (MongoDB) hosted in the cloud. It receives requests from the Front-end for the creation and authentication of users and for the CRUD of projects and tasks.
 
-**It was used:**
+**Used technologies:**
 - **Node.js**
 - **Express.js**
 - **JSON Web Token.**
